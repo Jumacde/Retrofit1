@@ -43,8 +43,16 @@ dependencies {
 
     // retrofits
     // retrofit
+    // Retrofit本体 (最新安定版)
     implementation ("com.squareup.retrofit2:retrofit:2.11.0")
+
+    // RetrofitのGsonコンバーター (Retrofit本体のバージョンに合わせる)
     implementation ("com.squareup.retrofit2:converter-gson:2.11.0")
-    // gson
-    implementation("com.squareup.retrofit2:converter-gson:2.11.0")
+
+    // Gsonライブラリ本体 (converter-gsonが内部で持っていることが多いが、明示的に指定する場合)
+    // converter-gson:2.11.0 は Gson 2.10.1 に依存しています
+    // そのため、明示的に指定するなら 2.10.1 以上が適切です。
+    // 不要な場合は削除しても構いません。
+    implementation ("com.google.code.gson:gson:2.10.1") // または 2.10.1 より新しい安定版
+
 }
